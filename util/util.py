@@ -4,25 +4,25 @@ import constants.variables as const
 import util.logger as logger
 
 
-# иксы
+# инициализация иксов
 def calc_x(h,n):
     x = []
     for i in range(0, n, 1):
-        x.append(round(const.a + h * i, 2))
-    logger.log('иксы', x, False)
+        x.append(round(const.A + h * i, 2))
+    logger.log('иксы', x)
     return x
 
 
-# h
+# инициализация h
 def init_h(n):
-    return (const.b - const.a) / n
+    return (const.B - const.A) / n
 
 
-# Матрица А
+# инициализация матрицы А
 def init_A(n):
     An = n
     Avalues = np.array([[-1] * An, [2] * An, [-1] * An], dtype=np.float128)
     Adiags = np.array([-1, 0, 1], dtype=np.float128)
     A = spdiags(Avalues, Adiags, An, An)
-    logger.log('Матрица А', A.todense(), False)
-    return A
+    logger.log('Матрица А', A.todense())
+    return A.toarray()

@@ -1,7 +1,8 @@
 import constants.variables as const
 
-def log(text, value, print_anyway):
-    if const.log or print_anyway:
+# функция логирования данных в консоль
+def log(text, value, print_anyway=False):
+    if const.LOG or print_anyway:
         print(text)
         print(value)
         print('')

@@ -6,7 +6,7 @@ import util.util as util
 
 
 if __name__ == '__main__':
-    for n in const.n_arr:
+    for n in const.N_ARR:
         h = util.init_h(n)
         logger.log('Начинаем вычисление для h:', str(h), True)
         x = util.calc_x(h,n)
