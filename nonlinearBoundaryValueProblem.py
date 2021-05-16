@@ -5,12 +5,12 @@ import util.logger as logger
 import util.util as util
 
 
-#правая часть уравнения
+# g(x)
 def g(h, i, x):
     return 3*x + pow(i+1,2) * pow(h,2) + 10*pow(x,3)
 
 
-#производная правой части уравнения
+# производная g(x)
 def dg(x):
     return 3 + 30*pow(x,2)
 
