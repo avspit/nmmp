@@ -20,9 +20,8 @@ def init_h(n):
 
 # инициализация матрицы А
 def init_A(n):
-    An = n
-    Avalues = np.array([[-1] * An, [2] * An, [-1] * An])
+    Avalues = np.array([[-1] * n, [2] * n, [-1] * n])
     Adiags = np.array([-1, 0, 1])
-    A = spdiags(Avalues, Adiags, An, An)
+    A = spdiags(Avalues, Adiags, n, n)
     logger.log('Матрица А', A.todense())
     return A.toarray()
