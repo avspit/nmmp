@@ -23,10 +23,7 @@ def solve(n):
     v = np.zeros((n, 1))  # вектор-решение шага 2 метода Ньютона
     A = util.init_A(n)  # матрица А
     h = util.init_h(n)  # h
-
     y = np.zeros((n, 1)) # результат решения методом Ньютона, игрики
-    y[0] = 0
-    y[v.size - 1] = n
 
     logger.log("Начинаем итерации методом Ньютона", "", True)
     while np.max(abs(k)) > const.STOP_VALUE:
@@ -55,7 +52,7 @@ def solve(n):
         logger.log('v', v, True)
 
     # заполняем y
-    for i in range(1,n):
+    for i in range(1, n, 1):
         y[i] = v[i-1]
     logger.log('y', y)
 
