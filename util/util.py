@@ -21,8 +21,8 @@ def init_h(n):
 # инициализация матрицы А
 def init_A(n):
     An = n
-    Avalues = np.array([[-1] * An, [2] * An, [-1] * An], dtype=np.float128)
-    Adiags = np.array([-1, 0, 1], dtype=np.float128)
+    Avalues = np.array([[-1] * An, [2] * An, [-1] * An])
+    Adiags = np.array([-1, 0, 1])
     A = spdiags(Avalues, Adiags, An, An)
     logger.log('Матрица А', A.todense())
     return A.toarray()
