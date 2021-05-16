@@ -25,7 +25,7 @@ def solve(n):
     h = util.init_h(n)  # h
     y = np.zeros((n, 1)) # результат решения методом Ньютона, игрики
 
-    logger.log("Начинаем итерации методом Ньютона", "", True)
+    logger.log("Начинаем итерации методом Ньютона", True)
     while np.max(abs(k)) > const.STOP_VALUE:
 
         # Шаг 1
