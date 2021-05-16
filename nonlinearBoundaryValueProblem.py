@@ -39,7 +39,7 @@ def solve(n):
 
         for i in range(0, n, 1):
             H[i] = pow(h,2) * g(h, i, v[i]) #вектор правых частей
-            dH[i][i] = 2 + pow(h,2) * dg(v[i]) #якобиан правой части
+            dH[i][i] = pow(h,2) * dg(v[i]) #якобиан правой части
         logger.log('H', H, False)
         logger.log('dH', dH, False)
 
