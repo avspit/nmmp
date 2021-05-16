@@ -1,5 +1,5 @@
 import numpy as np
-from util import logger
+import utils.logger as logger
 
 '''
 Метод прогонки
@@ -8,7 +8,7 @@ A - матрица уравнений
 B - решения
 '''
 def solve(A, B):
-    logger.log("Начинаем расчет СЛАУ методом прогонки", True)
+    logger.log(text="Начинаем расчет СЛАУ методом прогонки", force=True)
 
     n = B.size
 
@@ -43,6 +43,6 @@ def solve(A, B):
     # переворачиваем список х-ов
     x = np.array(x)[::-1]
 
-    logger.log("Расчет СЛАУ методом прогонки завершен", True)
+    logger.log(text="Расчет СЛАУ методом прогонки завершен", force=True)
 
     return x
