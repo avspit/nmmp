@@ -50,6 +50,7 @@ def solve(n):
         #if np.isinf(np.max(abs(k))) or np.isnan(np.max(abs(k))):
         #    break
 
+        # Шаг 2
         v = v + k
         logger.log('v', v, True)
 
