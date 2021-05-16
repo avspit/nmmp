@@ -17,7 +17,8 @@ def calc_x(h,n):
 
 if __name__ == '__main__':
     for n in const.n_arr:
-        h = util.calc_h(n)
+        h = util.init_h(n)
+        logger.log('=//= h =//=', str(h))
         x = calc_x(h,n)
         y = nbvp.solve(n)
         plt.plot(x, y, label='h='+str(h))

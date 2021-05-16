@@ -14,7 +14,7 @@ def solve(A, B):
     m2 = B[B.shape[0] - 1]
     alfa = k1
     beta = m1
-    # поиск альф и бет
+    # поиск alfa и beta
     c = 2
     a = 0
     b = 1
@@ -28,7 +28,7 @@ def solve(A, B):
         c += 1
         alf.append(alfa)
         bet.append(beta)
-    # расчет игриков
+    # расчет y
     y = (k2 * beta + m2) / (1 - k2 * alfa)
     otv = [y]
     for i in range(len(alf) - 1, -1, -1):
