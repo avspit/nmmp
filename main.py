@@ -4,24 +4,15 @@ import constants.variables as const
 import util.logger as logger
 import util.util as util
 
-'''
-Иксы
-'''
-def calc_x(h,n):
-    x = []
-    for i in range(0, n, 1):
-        x.append(round(const.a + h * i, 2))
-    logger.log('иксы', x)
-    return x
-
 
 if __name__ == '__main__':
     for n in const.n_arr:
         h = util.init_h(n)
-        logger.log('=//= h =//=', str(h))
-        x = calc_x(h,n)
+        logger.log('Начинаем вычисление для h:', str(h), True)
+        x = util.calc_x(h,n)
         y = nbvp.solve(n)
         plt.plot(x, y, label='h='+str(h))
+        logger.log('Вычисление завершено для h:', str(h), True)
     plt.legend()
     plt.show()
 
