@@ -44,9 +44,6 @@ def solve(n):
         k = tma.solve(L, R)
         logger.log(text='k', value=k, force=True)
 
-        #if np.isinf(np.max(abs(k))) or np.isnan(np.max(abs(k))):
-        #    break
-
         # Шаг 2
         v = v + k
         logger.log(text='v', value=v, force=True)

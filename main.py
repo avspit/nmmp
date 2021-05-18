@@ -3,7 +3,6 @@ import nonlinearBoundaryValueProblem as nbvp
 import constants.variables as const
 import utils.logger as logger
 import utils.util as util
-import numpy as np
 
 
 if __name__ == '__main__':
