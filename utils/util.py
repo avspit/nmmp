@@ -7,7 +7,7 @@ from utils import logger
 # инициализация иксов
 def calc_x(h,n):
     x = []
-    for i in range(0, n, 1):
+    for i in range(0, n+1, 1):
         x.append(round(const.A + h * i, 2))
     logger.log(text='иксы', value=x)
     return x
@@ -20,9 +20,9 @@ def init_h(n):
 
 # инициализация матрицы А
 def init_A(n):
-    Avalues = np.array([[-1] * n, [2] * n, [-1] * n])
+    Avalues = np.array([[-1] * (n-1), [2] * (n-1), [-1] * (n-1)])
     Adiags = np.array([-1, 0, 1])
-    A = spdiags(Avalues, Adiags, n, n)
+    A = spdiags(Avalues, Adiags, (n-1), (n-1))
     logger.log(text='Матрица А', value=A.todense())
     return A.toarray()
 

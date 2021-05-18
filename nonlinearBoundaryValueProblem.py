@@ -17,19 +17,19 @@ def dg(x):
 
 # метод Ньютона
 def solve(n):
-    H = np.zeros((n, 1)) # вектор-функция H
-    dH = np.zeros((n, n)) # вектор-функция производных значений H
+    H = np.zeros((n-1, 1)) # вектор-функция H
+    dH = np.zeros((n-1, n-1)) # вектор-функция производных значений H
     k = np.ones((n, 1))  # вектор-решение метода прогонки, является y(k)
-    v = np.zeros((n, 1))  # вектор-решение шага 2 метода Ньютона
+    v = np.zeros((n-1, 1))  # вектор-решение шага 2 метода Ньютона
     A = util.init_A(n)  # матрица А
     h = util.init_h(n)  # h
-    y = np.zeros((n, 1)) # результат решения методом Ньютона, игрики
+    y = np.zeros((n+1, 1)) # результат решения методом Ньютона, игрики
 
     logger.log(text="Начинаем итерации методом Ньютона", force=True)
     while np.max(abs(k)) > const.STOP_VALUE:
 
         # Шаг 1
-        for i in range(0, n, 1):
+        for i in range(0, n-1, 1):
             H[i] = pow(h,2) * g(h, i, v[i])
             dH[i][i] = pow(h,2) * dg(v[i])
         logger.log(text='H', value=H)
