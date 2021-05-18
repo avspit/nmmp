@@ -11,6 +11,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.pyc
+venv/*
 
 # Personal files #
 real_graf.py
