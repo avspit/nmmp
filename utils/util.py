@@ -8,7 +8,7 @@ from utils import logger
 def calc_x(h,n):
     x = []
     for i in range(0, n+1, 1):
-        x.append(round(const.A + h * i, 2))
+        x.append(const.A + h * i)
     logger.log(text='иксы', value=x)
     return x
 
