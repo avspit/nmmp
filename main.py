@@ -3,6 +3,8 @@ import nonlinearBoundaryValueProblem as nbvp
 import constants.variables as const
 import utils.logger as logger
 import utils.util as util
+import numpy as np
+from scipy.interpolate import splrep, splev
 
 
 if __name__ == '__main__':
@@ -11,7 +13,12 @@ if __name__ == '__main__':
         logger.log(text='Начинаем вычисление для h:', value=str(h), force=True)
         x = util.calc_x(h,n)
         y = nbvp.solve(n)
-        plt.plot(x, y, label='h='+str(h))
+        # Сделаем график более гладким с помощью сплайн-фитинга
+        tck = splrep(x, y)
+        xnew = np.linspace(x[0], x[-1])
+        ynew = splev(xnew, tck)
+        # Нарисуем график
+        plt.plot(xnew, ynew, label='h='+str(h))
         logger.log(text='Вычисление завершено для h:', value=str(h), force=True)
     plt.legend()
     plt.show()
